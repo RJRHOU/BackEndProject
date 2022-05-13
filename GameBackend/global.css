@@ -1,0 +1,9 @@
+.h1 {color:rgb(250, 244, 252); text-align: center; font-family:"Paytone One", sans-serif; text-shadow: 3px 3px 3px #282727;}
+.bg {background: url('./grandsky.jpeg') no-repeat; width: 100%; height: 100vh;}
+.form-container {border: 0px solid #fff; padding: 50px 60px; margin-top: 20vh;
+    -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+    box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+}
+.login {text-shadow: 3px 3px 3px #e16e8c;}
+.remember {color: rgb(250, 244, 252); text-shadow: 3px 3px 3px #282727;}
