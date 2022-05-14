@@ -1,0 +1,45 @@
+  img { 
+    border:4px solid #021a40; 
+    float: right 10%;
+    
+  }
+
+body {
+  background-color: gray;
+}  
+.header {
+  overflow: auto;
+}
+
+.navbar {
+  float: right;
+  list-style-type: none;
+}
+
+.navbar >  li{
+  float:left;
+  padding-right: 10px;
+}
+
+a:hover {
+  color: red;
+} 
+
+hr { border-color:palevioletred;
+   height: 4px;   }
+
+body {
+       background-color: rgb(125, 128, 136) ;
+   }
+
+.carousel {
+    /* width:640px;
+    height:360px; */
+    width: auto;
+    height:fit-content ;
+    margin:auto;
+    }
+
+  
+
+
