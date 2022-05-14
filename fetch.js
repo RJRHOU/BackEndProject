@@ -2,12 +2,12 @@ let title = document.getElementsByClassName("card-title")
 
 let body1 = document.getElementsByClassName("card-text")
 let url1 = document.getElementsByClassName("btn btn-lg btn-block btn-primary mt-auto")
-let newsImg = document.getElementsByClassName("card-img-top")
-let title2 = document.getElementsByClassName("card-title1")
-let body2 = document.getElementsByClassName("card-text1")
-let url2 = document.getElementsByClassName("btn btn-lg btn-block btn-primary mt-auto")
-let city = document.getElementById('city')
-let search = document.getElementById("search")
+let img = document.getElementsByClassName("card-img-top")
+// let title2 = document.getElementsByClassName("card-title1")
+// let body2 = document.getElementsByClassName("card-text1")
+// let url2 = document.getElementsByClassName("btn btn-lg btn-block btn-primary mt-auto")
+// let city = document.getElementById('city')
+// let search = document.getElementById("search")
 
 function gameSearch(e) {
    
@@ -29,7 +29,7 @@ const urlEncodedSearchString = encodeURIComponent(gameSearch);
             title[index].innerHTML= data.value[index].results.map.name
             body1[index].innerHTML= data.value[index].snippet
             url1[index].setAttribute("href", data.value[index].url)
-            newsImg[index].setAttribute("src", data.value[index].image.url)
+            img[index].setAttribute("src", data.value[index].image.url)
         }
     })
 }
