@@ -1,4 +1,18 @@
 {
+  "name": "sqlizepokedex",
+  "version": "1.0.0",
+  "description": "Starter Pokedex",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "db:up": "npx sequelize-cli db:migrate",
+    "db:down": "npx sequelize-cli db:drop",
+    "db:seed": "npx sequelize-cli db:seed:all",
+    "db:destroy": "dropdb postgres"
+  },
+
+
+  
   "dependencies": {
     "body-parser": "^1.20.0",
     "express": "^4.18.1",
@@ -6,7 +20,6 @@
     "http": "^0.0.1-security",
     "mysql2": "^2.3.3",
     "pg": "^8.7.3",
-    "postgres": "^3.1.0",
     "sequelize": "^6.19.0"
   },
   "devDependencies": {
