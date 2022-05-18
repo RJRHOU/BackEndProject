@@ -2,7 +2,8 @@
 
 const express = require('express');
 const app = express();
-const { sequelize, Game } = require('./models')
+const { sequelize, Game, Favorites, Wishlist, User } = require('./models')
+
 const bodyParser = require('body-parser');
 const es6Renderer = require('express-es6-template-engine');
 
@@ -90,6 +91,63 @@ app.post('/gameInfo', async (req, res) => {
     res.statusCode = 200;
     res.send(createdUser);
 });
+
+
+// Add a game to the gameList
+app.post('/favInfo', async (req, res) => {
+    let createdUser = await Favorites.create(
+    { 
+        gamename: req.body.gamename,
+        gameid: req.body.gameid,
+        star: req.body.star,
+        review: req.body.review,
+        username: req.body.username
+    } 
+    ) 
+    res.statusCode = 200;
+    res.send(createdUser);
+});
+
+
+//Update the meta for a game
+ app.patch('/gameInfo/:gameid', async (req, res) =>{
+
+    let gPatch = await Game.update(
+        {
+            gamename: req.body.gamename,
+            gameid: req.body.gameid,
+            star: req.body.star,
+            review: req.body.review,
+            username: req.body.username, 
+         },    {
+                  where:{
+                      gameid: req.params.gameid
+                  }
+              } 
+        
+    )
+     res.send(gPatch)         
+ })
+
+//Update the meta for a Favorites
+ app.patch('/favInfo/:gameid', async (req, res) =>{
+
+    let gPatch = await Favorites.update(
+        {
+            gamename: req.body.gamename,
+            gameid: req.body.gameid,
+            star: req.body.star,
+            review: req.body.review,
+            username: req.body.username, 
+         },    {
+                  where:{
+                      gameid: req.params.gameid
+                  }
+              } 
+        
+    )
+     res.send(gPatch)         
+ })
 
 
 
