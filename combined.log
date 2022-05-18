@@ -1,0 +1,28 @@
+{"level":"info","message":{"Action":"GET","Body":{"gameName":"pokemon"},"Content_Type":"application/json","Path":"/game","Time":"05/16/2022, 11:04:02 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameID":"1","gameName":"pokemon","review":"ehh it was okay","star":"three","userName":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 7:09:09 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameID":"1","gameName":"pokemon","review":"ehh it was okay","star":"three","userName":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 7:18:54 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameID":"1","gameName":"pokemon","review":"ehh it was okay","star":"three","userName":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 7:23:28 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameID":"1","gameName":"pokemon","review":"ehh it was okay","star":"three","userName":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 7:23:57 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameID":"1","gameName":"pokemon","review":"ehh it was okay","star":"three","userName":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 7:25:01 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"1","gamename":"pokemon","review":"ehh it was okay","star":"three","username":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 7:34:21 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"1","gamename":"pokemon","review":"ehh it was okay","star":"three","username":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 7:34:23 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"1","gamename":"pokemon","review":"ehh it was okay","star":"three","username":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 7:36:58 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"1","gamename":"pokemon","review":"ehh it was okay","star":"three","username":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 7:46:57 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"1","gamename":"pokemon","review":"ehh it was okay","star":"three","username":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 7:59:27 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"1","gamename":"pokemon","review":"ehh it was okay","star":"three","username":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 8:04:15 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"1","gamename":"pokemon","review":"ehh it was okay","star":3,"username":"test1"},"Content_Type":"application/json","Path":"/gameInfo","Time":"05/17/2022, 8:05:13 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:08:05 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList","Time":"05/17/2022, 8:08:24 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList","Time":"05/17/2022, 8:08:55 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList","Time":"05/17/2022, 8:22:02 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList","Time":"05/17/2022, 8:22:03 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList","Time":"05/17/2022, 8:23:05 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:23:15 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:23:16 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList","Time":"05/17/2022, 8:23:34 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:24:53 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:51:33 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:52:25 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:53:28 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:55:13 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:58:11 pm"},"service":"Game"}
