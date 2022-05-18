@@ -91,10 +91,21 @@ app.post('/gameInfo', async (req, res) => {
     res.send(createdUser);
 });
 
+// Delete a game from the gameList
+app.delete('/gameInfo/:id', async (req, res) => {
+    let deletedGames = await Game.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+    res.sendStatus(200).send(deletedGames);
+})
 
 
 
-app.listen(7500, async ()=> {
-    console.log('Server is running on port 7500')
+
+
+app.listen(6900, async ()=> {
+    console.log('Server is running on port 6900')
     await sequelize.sync()
 })
