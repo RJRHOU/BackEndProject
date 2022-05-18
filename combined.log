@@ -26,3 +26,13 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:53:28 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:55:13 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:58:11 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo/2","Time":"05/18/2022, 5:40:02 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo/2","Time":"05/18/2022, 5:40:44 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo/2","Time":"05/18/2022, 5:41:29 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo/2","Time":"05/18/2022, 5:49:50 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo/2","Time":"05/18/2022, 5:59:00 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo/2","Time":"05/18/2022, 6:02:10 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo/2","Time":"05/18/2022, 6:05:45 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo/2","Time":"05/18/2022, 6:12:55 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"DELETE","Body":{},"Path":"/gameInfo/1","Time":"05/18/2022, 6:13:28 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"DELETE","Body":{},"Path":"/gameInfo/1","Time":"05/18/2022, 6:14:47 pm"},"service":"Game"}
