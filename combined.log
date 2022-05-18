@@ -26,6 +26,7 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:53:28 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:55:13 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/17/2022, 8:58:11 pm"},"service":"Game"}
+
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/18/2022, 5:57:26 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"PATCH","Body":{"gamename":"Doom"},"Content_Type":"application/json","Path":"/gameInfo/1","Time":"05/18/2022, 6:03:10 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"PATCH","Body":{"gamename":"Doom"},"Content_Type":"application/json","Path":"/gameInfo/","Time":"05/18/2022, 6:07:42 pm"},"service":"Game"}
@@ -37,3 +38,4 @@
 {"level":"info","message":{"Action":"POST","Body":{"gameid":777,"gamename":"donkey kong","review":"bananas","star":5,"username":"test"},"Content_Type":"application/json","Path":"/favInfo","Time":"05/18/2022, 6:19:59 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"PATCH","Body":{"star":4},"Content_Type":"application/json","Path":"/gameInfo/777","Time":"05/18/2022, 6:42:38 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"PATCH","Body":{"star":4},"Content_Type":"application/json","Path":"/favInfo/777","Time":"05/18/2022, 6:44:33 pm"},"service":"Game"}
+
