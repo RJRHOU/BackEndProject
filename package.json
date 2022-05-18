@@ -1,15 +1,18 @@
 {
+
   "name": "sqlizegame",
   "version": "1.0.0",
   "description": "Starter Game",
   "main": "serverBP.js",
   "scripts": {
     "start": "nodemon serverBP.js",
+
     "db:up": "npx sequelize-cli db:migrate",
     "db:down": "npx sequelize-cli db:drop",
     "db:seed": "npx sequelize-cli db:seed:all",
     "db:destroy": "dropdb postgres"
   },
+
   "dependencies": {
     "body-parser": "^1.20.0",
     "express": "^4.18.1",
@@ -17,10 +20,12 @@
     "http": "^0.0.1-security",
     "mysql2": "^2.3.3",
     "pg": "^8.7.3",
+
     "pg-promise": "^10.11.1",
     "postgres": "^3.1.0",
     "sequelize": "^6.19.0",
     "winston": "^3.7.2"
+
   },
   "devDependencies": {
     "nodemon": "^2.0.16",
