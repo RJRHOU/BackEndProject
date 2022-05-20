@@ -2,7 +2,8 @@
 
 const express = require('express');
 const app = express();
-const { sequelize, Game } = require('./models')
+const { sequelize, Game, Favorites, Wishlist, User } = require('./models')
+
 const bodyParser = require('body-parser');
 const es6Renderer = require('express-es6-template-engine');
 
@@ -92,10 +93,30 @@ app.post('/gameInfo', async (req, res) => {
 });
 
 // Delete a game from the gameList
-app.delete('/gameInfo/:id', async (req, res) => {
+app.delete('/gameInfo/:gamename', async (req, res) => {
     let deletedGames = await Game.destroy({
         where: {
-            id: req.params.id
+            gamename: req.params.gamename
+        }
+    })
+    res.sendStatus(200).send(deletedGames);
+})
+
+// Delete a game from the Favorites
+app.delete('/favInfo/:gamename', async (req, res) => {
+    let deletedGames = await Favorites.destroy({
+        where: {
+            gamename: req.params.gamename
+        }
+    })
+    res.sendStatus(200).send(deletedGames);
+})
+
+// Delete a game from the gameList
+app.delete('/wishInfo/:gamename', async (req, res) => {
+    let deletedGames = await Wishlist.destroy({
+        where: {
+            gamename: req.params.gamename
         }
     })
     res.sendStatus(200).send(deletedGames);
@@ -103,9 +124,85 @@ app.delete('/gameInfo/:id', async (req, res) => {
 
 
 
+// Add a game to the gameList
+app.post('/favInfo', async (req, res) => {
+    let createdUser = await Favorites.create(
+    { 
+        gamename: req.body.gamename,
+        gameid: req.body.gameid,
+        star: req.body.star,
+        review: req.body.review,
+        username: req.body.username
+    } 
+    ) 
+    res.statusCode = 200;
+    res.send(createdUser);
+});
 
 
-app.listen(6900, async ()=> {
-    console.log('Server is running on port 6900')
+//Update the meta for a game
+ app.patch('/gameInfo/:gamename', async (req, res) =>{
+
+    let gPatch = await Game.update(
+        {
+            gamename: req.body.gamename,
+            gameid: req.body.gameid,
+            star: req.body.star,
+            review: req.body.review,
+            username: req.body.username, 
+         },    {
+                  where:{
+                      gamename: req.params.gamename
+                  }
+              } 
+        
+    )
+    res.sendStatus(200).send(gPatch);        
+ })
+
+//Update the meta for a Favorites
+ app.patch('/favInfo/:gamename', async (req, res) =>{
+
+    let gPatch = await Favorites.update(
+        {
+            gamename: req.body.gamename,
+            gameid: req.body.gameid,
+            star: req.body.star,
+            review: req.body.review,
+            username: req.body.username, 
+         },    {
+                  where:{
+                      gamename: req.params.gamename
+                  }
+              } 
+        
+    )
+    res.sendStatus(200).send(gPatch);          
+ })
+
+ //Update the meta for a Wishlist
+ app.patch('/wishInfo/:gamename', async (req, res) =>{
+
+    let gPatch = await Wishlist.update(
+        {
+            gamename: req.body.gamename,
+            gameid: req.body.gameid,
+            star: req.body.star,
+            review: req.body.review,
+            username: req.body.username, 
+         },    {
+                  where:{
+                      gamename: req.params.gamename
+                  }
+              } 
+        
+    )
+    res.sendStatus(200).send(gPatch);          
+ })
+
+
+
+app.listen(7500, async ()=> {
+    console.log('Server is running on port 7500')
     await sequelize.sync()
 })
