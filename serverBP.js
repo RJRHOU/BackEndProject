@@ -92,6 +92,104 @@ app.post('/gameInfo', async (req, res) => {
     res.send(createdUser);
 });
 
+
+
+
+//Get all Favorites from Info (app.get)
+app.get('/favInfo', async (req, res) => {
+    let favoritesgame = await Favorites.findAll();
+
+    res.send(favoritesgame)
+    
+})
+
+// Get a single game from the gameList (app.get)
+app.get('/favList/:id', async (req, res) => {
+    let favoritesgame = await Favorites.findOne ({
+        where: {
+            id: req.params.id
+        }
+    })
+    if (favoritesgame == null) {
+        res.statusCode = 400;
+        res.send('Not found');
+    } else {
+        res.statusCode = 200;
+        // res.send(favoritesgame);
+        res.render('favoritesgame', {
+            locals: {
+                favoritesgame,
+                
+            }
+        });
+    }
+})
+
+
+// Add a game to the FavoritesList
+app.post('/favInfo', async (req, res) => {
+    let createdFavorites = await Favorites.create(
+    { 
+        gamename: req.body.gamename,
+        gameid: req.body.gameid,
+        star: req.body.star,
+        review: req.body.review,
+        username: req.body.username
+    } 
+    ) 
+    res.statusCode = 200;
+    res.send(createdFavorites);
+});
+
+
+
+//Get all Wishlist from Info (app.get)
+app.get('/wishInfo', async (req, res) => {
+    let wishlistgame = await Wishlist.findAll();
+
+    res.send(wishlistgame)
+    
+})
+
+// Get a single game from the WishList (app.get)
+app.get('/wishList/:id', async (req, res) => {
+    let wishgame = await Wishlist.findOne ({
+        where: {
+            id: req.params.id
+        }
+    })
+    if (wishgame == null) {
+        res.statusCode = 400;
+        res.send('Not found');
+    } else {
+        res.statusCode = 200;
+        // res.send(wishlistgame);
+        res.render('wishlistgame', {
+            locals: {
+                wishgame,
+                
+            }
+        });
+    }
+})
+
+
+// Add a game to the WishList
+app.post('/wishInfo', async (req, res) => {
+    let createdwishList = await Wishlist.create(
+    { 
+        gamename: req.body.gamename,
+        gameid: req.body.gameid,
+        rating: req.body.rating,
+        username: req.body.username
+    } 
+    ) 
+    res.statusCode = 200;
+    res.send(createdwishList);
+});
+
+
+
 // Delete a game from the gameList
 app.delete('/gameInfo/:gamename', async (req, res) => {
     let deletedGames = await Game.destroy({
