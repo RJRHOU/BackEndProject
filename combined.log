@@ -58,3 +58,4 @@
 {"level":"info","message":{"Action":"POST","Body":{"gameid":"877888","gamename":"star wars fallen order","review":"it was reallly goood","username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:41:54 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"POST","Body":{"gameid":"877888","gamename":"star wars fallen order","rating":5,"username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:43:38 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{"gameid":"877888","gamename":"star wars fallen order","rating":5,"username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:43:46 pm"},"service":"Game"}
+

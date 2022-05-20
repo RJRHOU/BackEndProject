@@ -191,10 +191,30 @@ app.post('/wishInfo', async (req, res) => {
 
 
 // Delete a game from the gameList
-app.delete('/gameInfo/:id', async (req, res) => {
+app.delete('/gameInfo/:gamename', async (req, res) => {
     let deletedGames = await Game.destroy({
         where: {
-            id: req.params.id
+            gamename: req.params.gamename
+        }
+    })
+    res.sendStatus(200).send(deletedGames);
+})
+
+// Delete a game from the Favorites
+app.delete('/favInfo/:gamename', async (req, res) => {
+    let deletedGames = await Favorites.destroy({
+        where: {
+            gamename: req.params.gamename
+        }
+    })
+    res.sendStatus(200).send(deletedGames);
+})
+
+// Delete a game from the gameList
+app.delete('/wishInfo/:gamename', async (req, res) => {
+    let deletedGames = await Wishlist.destroy({
+        where: {
+            gamename: req.params.gamename
         }
     })
     res.sendStatus(200).send(deletedGames);
@@ -219,7 +239,7 @@ app.post('/favInfo', async (req, res) => {
 
 
 //Update the meta for a game
- app.patch('/gameInfo/:gameid', async (req, res) =>{
+ app.patch('/gameInfo/:gamename', async (req, res) =>{
 
     let gPatch = await Game.update(
         {
@@ -230,16 +250,16 @@ app.post('/favInfo', async (req, res) => {
             username: req.body.username, 
          },    {
                   where:{
-                      gameid: req.params.gameid
+                      gamename: req.params.gamename
                   }
               } 
         
     )
-     res.send(gPatch)         
+    res.sendStatus(200).send(gPatch);        
  })
 
 //Update the meta for a Favorites
- app.patch('/favInfo/:gameid', async (req, res) =>{
+ app.patch('/favInfo/:gamename', async (req, res) =>{
 
     let gPatch = await Favorites.update(
         {
@@ -250,14 +270,33 @@ app.post('/favInfo', async (req, res) => {
             username: req.body.username, 
          },    {
                   where:{
-                      gameid: req.params.gameid
+                      gamename: req.params.gamename
                   }
               } 
         
     )
-     res.send(gPatch)         
+    res.sendStatus(200).send(gPatch);          
  })
 
+ //Update the meta for a Wishlist
+ app.patch('/wishInfo/:gamename', async (req, res) =>{
+
+    let gPatch = await Wishlist.update(
+        {
+            gamename: req.body.gamename,
+            gameid: req.body.gameid,
+            star: req.body.star,
+            review: req.body.review,
+            username: req.body.username, 
+         },    {
+                  where:{
+                      gamename: req.params.gamename
+                  }
+              } 
+        
+    )
+    res.sendStatus(200).send(gPatch);          
+ })
 
 
 
