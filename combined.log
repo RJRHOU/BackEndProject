@@ -39,3 +39,22 @@
 {"level":"info","message":{"Action":"PATCH","Body":{"star":4},"Content_Type":"application/json","Path":"/gameInfo/777","Time":"05/18/2022, 6:42:38 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"PATCH","Body":{"star":4},"Content_Type":"application/json","Path":"/favInfo/777","Time":"05/18/2022, 6:44:33 pm"},"service":"Game"}
 
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favoritesInfo","Time":"05/19/2022, 7:04:41 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/19/2022, 7:05:43 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favoritesInfo","Time":"05/19/2022, 7:05:54 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/FavoritesInfo","Time":"05/19/2022, 7:05:59 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favoritesInfo","Time":"05/19/2022, 7:06:04 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{"gameid":"1111","gamename":"god of war","review":"it was amazing","star":4,"username":"test01"},"Content_Type":"application/json","Path":"/favoritesInfo","Time":"05/19/2022, 7:07:58 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{"gameid":"1111","gamename":"god of war","review":"it was amazing","star":4,"username":"test01"},"Content_Type":"application/json","Path":"/favoritesInfo","Time":"05/19/2022, 7:09:37 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{"gameid":"1111","gamename":"god of war","review":"it was amazing","star":4,"username":"test01"},"Content_Type":"application/json","Path":"/favoritesInfo","Time":"05/19/2022, 7:20:50 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"1111","gamename":"god of war","review":"it was amazing","star":4,"username":"test01"},"Content_Type":"application/json","Path":"/favoritesInfo","Time":"05/19/2022, 7:21:18 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"1111","gamename":"god of war","review":"it was amazing","star":4,"username":"test01"},"Content_Type":"application/json","Path":"/favoritesInfo","Time":"05/19/2022, 7:22:27 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"1109811","gamename":"god of war","review":"it was amazing","star":4,"username":"test01"},"Content_Type":"application/json","Path":"/favoritesInfo","Time":"05/19/2022, 7:22:44 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"1109811","gamename":"god of war","review":"it was amazing","star":4,"username":"test01"},"Content_Type":"application/json","Path":"/favInfo","Time":"05/19/2022, 7:22:57 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{"gameid":"1109811","gamename":"god of war","review":"it was amazing","star":4,"username":"test01"},"Content_Type":"application/json","Path":"/favInfo","Time":"05/19/2022, 7:23:07 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"877888","gamename":"star wars fallen order","review":"it was reallly goood","username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:39:03 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"877888","gamename":"star wars fallen order","review":"it was reallly goood","username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:39:32 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"877888","gamename":"star wars fallen order","review":"it was reallly goood","username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:40:35 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"877888","gamename":"star wars fallen order","review":"it was reallly goood","username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:41:54 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":"877888","gamename":"star wars fallen order","rating":5,"username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:43:38 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{"gameid":"877888","gamename":"star wars fallen order","rating":5,"username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:43:46 pm"},"service":"Game"}
