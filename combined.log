@@ -39,3 +39,8 @@
 {"level":"info","message":{"Action":"PATCH","Body":{"star":4},"Content_Type":"application/json","Path":"/gameInfo/777","Time":"05/18/2022, 6:42:38 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"PATCH","Body":{"star":4},"Content_Type":"application/json","Path":"/favInfo/777","Time":"05/18/2022, 6:44:33 pm"},"service":"Game"}
 
+{"level":"info","message":{"Action":"DELETE","Body":{},"Path":"/gameInfo/777","Time":"05/19/2022, 6:07:01 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"DELETE","Body":{},"Path":"/gameInfo/1","Time":"05/19/2022, 6:13:40 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"DELETE","Body":{},"Path":"/favInfo/1","Time":"05/19/2022, 6:15:44 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":777,"gamename":"donkey kong","review":"bananas","star":5,"username":"test"},"Content_Type":"application/json","Path":"/favInfo","Time":"05/19/2022, 6:37:04 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"DELETE","Body":{},"Path":"/favInfo/donkey%20kong","Time":"05/19/2022, 6:40:58 pm"},"service":"Game"}
