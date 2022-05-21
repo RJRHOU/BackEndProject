@@ -8,6 +8,8 @@ const { sequelize, Game, Favorites, Wishlist, User } = require('./models')
 
 const bodyParser = require('body-parser');
 const es6Renderer = require('express-es6-template-engine');
+const fetch = require("node-fetch");
+
 
 //app.use('/', require('./routes/endpoints'));
 
@@ -48,6 +50,19 @@ app.all('*', (req, res, next) => {
     next()
 })
 
+app.get('/home', (req, res) => {
+   
+    res.render('index2', {
+        locals: {
+            //    name: '',
+            //    games: []
+            }
+        });
+    })
+
+
+
+
 //Get all games from gameInfo (app.get)
 app.get('/gameInfo', async (req, res) => {
     let gaming = await Game.findAll();
@@ -57,15 +72,36 @@ app.get('/gameInfo', async (req, res) => {
 })
 
 // Get a single game from the gameList (app.get)
-function singleGame(){
+// function singleGame(){
 
-let SGame = document.getElementById("singleGame").value
-let idArray = []
+// let SGame = document.getElementById("singleGame").value
+// let idArray = []
+app.post('/home', async (req,res)=> {
+   
+    const userInput = req.body.search;
+    const urlEncodedSearchString = encodeURIComponent(userInput);
     
-app.get('/gameList/:id', async (req, res) => {
+   
+    let games = await fetch(`https://rawg.io/api/games?key=c1be38abe1e74ea3a7b554f19b8a9df6&search=${urlEncodedSearchString}`)
+    let gamesJson = await games.json()
+    let allGames = gamesJson.results.slice(0,3)
+      
+        res.render('index3', {
+        locals: {
+               games: allGames,
+               name: ''
+            }
+        });
+        
+})    
+
+app.get('/gameList', async (req, res) => {
+
+    
+  
     let gaming = await Game.findOne ({
         where: {
-            id: req.params.id
+           
         }
     })
     if (gaming == null) {
@@ -82,10 +118,14 @@ app.get('/gameList/:id', async (req, res) => {
         });
     }
 })
-}
+// }
 
 // Add a game to the gameList
 app.post('/gameInfo', async (req, res) => {
+
+    
+
+
     let createdUser = await Game.create(
     { 
         gamename: req.body.gamename,
@@ -103,14 +143,14 @@ app.post('/gameInfo', async (req, res) => {
 
 
 //Get all Favorites from Info (app.get)
-app.get('/favInfo', async (req, res) => {
-    let favoritesgame = await Favorites.findAll();
+// app.get('/favInfo', async (req, res) => {
+//     let favoritesgame = await Favorites.findAll();
 
-    res.send(favoritesgame)
+//     res.send(favoritesgame)
     
-})
+// })
 
-// Get a single game from the gameList (app.get)
+// Get a single game from the favList (app.get)
 app.get('/favList/:id', async (req, res) => {
     let favoritesgame = await Favorites.findOne ({
         where: {
@@ -123,7 +163,7 @@ app.get('/favList/:id', async (req, res) => {
     } else {
         res.statusCode = 200;
         // res.send(favoritesgame);
-        res.render('favoritesgame', {
+        res.render('gaming', {
             locals: {
                 favoritesgame,
                 
@@ -329,7 +369,7 @@ app.post('/login', (req, res) => {
     })
 
 
-app.listen(7500, async ()=> {
+app.listen(8500, async ()=> {
     console.log('Server is running on port 7500')
     await sequelize.sync()
 })

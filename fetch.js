@@ -1,4 +1,4 @@
-let title = document.getElementsByClassName("card-title")
+let fav = document.getElementsByClassName("card-title")
 
 let body1 = document.getElementsByClassName("card-text")
 let url1 = document.getElementsByClassName("btn btn-lg btn-block btn-primary mt-auto")
