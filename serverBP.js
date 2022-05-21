@@ -1,5 +1,7 @@
 //GameZ Backend Project
 
+// document.getElementById('search').addEventListener('click', singleGame)
+
 const express = require('express');
 const app = express();
 const { sequelize, Game, Favorites, Wishlist, User } = require('./models')
@@ -10,9 +12,7 @@ const es6Renderer = require('express-es6-template-engine');
 //app.use('/', require('./routes/endpoints'));
 
 const winston = require('winston');
-
 const moment = require('moment');
-
 const pg = require('pg-promise')();
 
 const bcrypt = require('bcrypt');
@@ -57,6 +57,11 @@ app.get('/gameInfo', async (req, res) => {
 })
 
 // Get a single game from the gameList (app.get)
+function singleGame(){
+
+let SGame = document.getElementById("singleGame").value
+let idArray = []
+    
 app.get('/gameList/:id', async (req, res) => {
     let gaming = await Game.findOne ({
         where: {
@@ -65,7 +70,7 @@ app.get('/gameList/:id', async (req, res) => {
     })
     if (gaming == null) {
         res.statusCode = 400;
-        res.send('Not found');
+        res.render('Not found');
     } else {
         res.statusCode = 200;
         // res.send(gaming);
@@ -77,7 +82,7 @@ app.get('/gameList/:id', async (req, res) => {
         });
     }
 })
-
+}
 
 // Add a game to the gameList
 app.post('/gameInfo', async (req, res) => {
@@ -114,7 +119,7 @@ app.get('/favList/:id', async (req, res) => {
     })
     if (favoritesgame == null) {
         res.statusCode = 400;
-        res.send('Not found');
+        res.render('Not found');
     } else {
         res.statusCode = 200;
         // res.send(favoritesgame);
