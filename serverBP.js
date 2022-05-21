@@ -15,6 +15,8 @@ const moment = require('moment');
 
 const pg = require('pg-promise')();
 
+const bcrypt = require('bcrypt');
+
 //To convert the request to readable json format, we use bodyparser package
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -298,6 +300,28 @@ app.post('/favInfo', async (req, res) => {
     res.sendStatus(200).send(gPatch);          
  })
 
+ // User login 
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+
+    models.User.findOne({
+        where: { email: email }
+      }).then((user) => {
+        if (!user) {
+          res.json({ error: 'no user with that username' })
+          return;
+        }
+    
+        bcrypt.compare(password, user.password, (err, match) => {
+          if (match) {
+            req.session.user = user;
+            res.json({ user_id: user.id, success: true })
+          } else {
+            res.json({ error: 'incorrect password' })
+          }
+        })
+      })
+    })
 
 
 app.listen(7500, async ()=> {
