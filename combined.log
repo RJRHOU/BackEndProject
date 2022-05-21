@@ -59,3 +59,23 @@
 {"level":"info","message":{"Action":"POST","Body":{"gameid":"877888","gamename":"star wars fallen order","rating":5,"username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:43:38 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{"gameid":"877888","gamename":"star wars fallen order","rating":5,"username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:43:46 pm"},"service":"Game"}
 
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/2","Time":"05/20/2022, 6:01:39 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/2","Time":"05/20/2022, 6:01:59 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/3","Time":"05/20/2022, 6:02:35 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"POST","Body":{"gameid":777,"gamename":"donkey kong","review":"bananas","star":5,"username":"test"},"Content_Type":"application/json","Path":"/favInfo","Time":"05/20/2022, 6:03:08 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favInfo","Time":"05/20/2022, 6:04:03 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favList/3","Time":"05/20/2022, 6:04:49 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favList/3","Time":"05/20/2022, 6:06:46 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favList/3","Time":"05/20/2022, 6:06:51 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favList/3","Time":"05/20/2022, 6:06:52 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favList/3","Time":"05/20/2022, 6:06:54 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favList/3","Time":"05/20/2022, 6:07:52 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favList/3","Time":"05/20/2022, 6:07:53 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favList/3","Time":"05/20/2022, 6:08:09 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favInfo/3","Time":"05/20/2022, 6:08:37 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favList/3","Time":"05/20/2022, 6:09:19 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/3","Time":"05/21/2022, 8:40:47 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/3","Time":"05/21/2022, 8:43:47 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/3","Time":"05/21/2022, 8:44:25 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/2","Time":"05/21/2022, 8:44:31 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/2","Time":"05/21/2022, 8:44:33 am"},"service":"Game"}
