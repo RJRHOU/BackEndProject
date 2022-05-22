@@ -59,6 +59,7 @@
 {"level":"info","message":{"Action":"POST","Body":{"gameid":"877888","gamename":"star wars fallen order","rating":5,"username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:43:38 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{"gameid":"877888","gamename":"star wars fallen order","rating":5,"username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:43:46 pm"},"service":"Game"}
 
+
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/2","Time":"05/20/2022, 6:01:39 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/2","Time":"05/20/2022, 6:01:59 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/3","Time":"05/20/2022, 6:02:35 pm"},"service":"Game"}
@@ -833,3 +834,4 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/Assets/WDNew.jpg","Time":"05/22/2022, 6:28:13 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"POST","Body":{"search":"mario"},"Content_Type":"application/x-www-form-urlencoded","Path":"/home","Time":"05/22/2022, 6:28:15 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/serverBP.js","Time":"05/22/2022, 6:28:17 pm"},"service":"Game"}
+
