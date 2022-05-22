@@ -1,19 +1,23 @@
 //GameZ Backend Project
 
+// document.getElementById('search').addEventListener('click', singleGame)
+
 const express = require('express');
 const app = express();
 const { sequelize, Game, Favorites, Wishlist, User } = require('./models')
 
 const bodyParser = require('body-parser');
 const es6Renderer = require('express-es6-template-engine');
+const fetch = require("node-fetch");
+
 
 //app.use('/', require('./routes/endpoints'));
 
 const winston = require('winston');
-
 const moment = require('moment');
-
 const pg = require('pg-promise')();
+
+const bcrypt = require('bcrypt');
 
 //To convert the request to readable json format, we use bodyparser package
 app.use(bodyParser.json())
@@ -46,6 +50,19 @@ app.all('*', (req, res, next) => {
     next()
 })
 
+app.get('/home', (req, res) => {
+   
+    res.render('index2', {
+        locals: {
+            //    name: '',
+            //    games: []
+            }
+        });
+    })
+
+
+
+
 //Get all games from gameInfo (app.get)
 app.get('/gameInfo', async (req, res) => {
     let gaming = await Game.findAll();
@@ -55,15 +72,41 @@ app.get('/gameInfo', async (req, res) => {
 })
 
 // Get a single game from the gameList (app.get)
-app.get('/gameList/:id', async (req, res) => {
+// function singleGame(){
+
+// let SGame = document.getElementById("singleGame").value
+// let idArray = []
+app.post('/home', async (req,res)=> {
+   
+    const userInput = req.body.search;
+    const urlEncodedSearchString = encodeURIComponent(userInput);
+    
+   
+    let games = await fetch(`https://rawg.io/api/games?key=c1be38abe1e74ea3a7b554f19b8a9df6&search=${urlEncodedSearchString}`)
+    let gamesJson = await games.json()
+    let allGames = gamesJson.results.slice(0,3)
+      
+        res.render('index3', {
+        locals: {
+               games: allGames,
+               name: ''
+            }
+        });
+        
+})    
+
+app.get('/gameList', async (req, res) => {
+
+    
+  
     let gaming = await Game.findOne ({
         where: {
-            id: req.params.id
+           
         }
     })
     if (gaming == null) {
         res.statusCode = 400;
-        res.send('Not found');
+        res.render('Not found');
     } else {
         res.statusCode = 200;
         // res.send(gaming);
@@ -75,10 +118,14 @@ app.get('/gameList/:id', async (req, res) => {
         });
     }
 })
-
+// }
 
 // Add a game to the gameList
 app.post('/gameInfo', async (req, res) => {
+
+    
+
+
     let createdUser = await Game.create(
     { 
         gamename: req.body.gamename,
@@ -96,14 +143,14 @@ app.post('/gameInfo', async (req, res) => {
 
 
 //Get all Favorites from Info (app.get)
-app.get('/favInfo', async (req, res) => {
-    let favoritesgame = await Favorites.findAll();
+// app.get('/favInfo', async (req, res) => {
+//     let favoritesgame = await Favorites.findAll();
 
-    res.send(favoritesgame)
+//     res.send(favoritesgame)
     
-})
+// })
 
-// Get a single game from the gameList (app.get)
+// Get a single game from the favList (app.get)
 app.get('/favList/:id', async (req, res) => {
     let favoritesgame = await Favorites.findOne ({
         where: {
@@ -112,11 +159,11 @@ app.get('/favList/:id', async (req, res) => {
     })
     if (favoritesgame == null) {
         res.statusCode = 400;
-        res.send('Not found');
+        res.render('Not found');
     } else {
         res.statusCode = 200;
         // res.send(favoritesgame);
-        res.render('favoritesgame', {
+        res.render('gaming', {
             locals: {
                 favoritesgame,
                 
@@ -298,9 +345,31 @@ app.post('/favInfo', async (req, res) => {
     res.sendStatus(200).send(gPatch);          
  })
 
+ // User login 
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+
+    models.User.findOne({
+        where: { email: email }
+      }).then((user) => {
+        if (!user) {
+          res.json({ error: 'no user with that username' })
+          return;
+        }
+    
+        bcrypt.compare(password, user.password, (err, match) => {
+          if (match) {
+            req.session.user = user;
+            res.json({ user_id: user.id, success: true })
+          } else {
+            res.json({ error: 'incorrect password' })
+          }
+        })
+      })
+    })
 
 
-app.listen(7500, async ()=> {
+app.listen(8500, async ()=> {
     console.log('Server is running on port 7500')
     await sequelize.sync()
 })

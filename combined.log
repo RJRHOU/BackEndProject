@@ -59,9 +59,3 @@
 {"level":"info","message":{"Action":"POST","Body":{"gameid":"877888","gamename":"star wars fallen order","rating":5,"username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:43:38 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{"gameid":"877888","gamename":"star wars fallen order","rating":5,"username":"test001"},"Content_Type":"application/json","Path":"/wishInfo","Time":"05/19/2022, 7:43:46 pm"},"service":"Game"}
 
-{"level":"info","message":{"Action":"GET","Body":{},"Path":"/favoritesInfo","Time":"05/20/2022, 10:53:46 pm"},"service":"Game"}
-{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameInfo","Time":"05/20/2022, 10:54:28 pm"},"service":"Game"}
-{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/1","Time":"05/20/2022, 10:55:01 pm"},"service":"Game"}
-{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/id/1","Time":"05/20/2022, 10:55:23 pm"},"service":"Game"}
-{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/id:1","Time":"05/20/2022, 10:55:28 pm"},"service":"Game"}
-{"level":"info","message":{"Action":"GET","Body":{},"Path":"/gameList/i1","Time":"05/20/2022, 10:56:22 pm"},"service":"Game"}
