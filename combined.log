@@ -280,3 +280,10 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/Assets/Crysis.jpg","Time":"05/21/2022, 2:59:15 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"POST","Body":{"search":"batman"},"Content_Type":"application/x-www-form-urlencoded","Path":"/home","Time":"05/21/2022, 2:59:19 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/serverBP.js","Time":"05/21/2022, 2:59:21 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/","Time":"05/22/2022, 9:57:46 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/home","Time":"05/22/2022, 9:57:54 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/Assets/CNew.jpg","Time":"05/22/2022, 9:57:54 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/game.css","Time":"05/22/2022, 9:57:54 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/Assets/FCNew.jpg","Time":"05/22/2022, 9:57:54 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/Assets/TRNew.jpg","Time":"05/22/2022, 9:57:54 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/Assets/WDNew.jpg","Time":"05/22/2022, 9:57:54 am"},"service":"Game"}
