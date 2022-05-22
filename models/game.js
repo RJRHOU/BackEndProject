@@ -17,8 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     gamename: DataTypes.STRING,
     gameid: DataTypes.INTEGER,
     star: DataTypes.INTEGER,
-    review: DataTypes.STRING,
+    released: DataTypes.STRING,
     username: DataTypes.STRING
+    
   }, {
     sequelize,
     modelName: 'Game',

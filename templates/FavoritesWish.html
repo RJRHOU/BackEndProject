@@ -60,20 +60,11 @@
 
     <div>
 
-      <!-- <%- include('partials/nav') %> -->
-      <div class="container d-flex result-container">
-          <div class="row d-flex result-cards">
-              <!-- <% results.forEach(games => { %>       -->
-      
-
-${games.map(game => 
-  `<div class="card" style="width: 18rem;">
+  <div class="card" style="width: 18rem;">
     <img src="${game.background_image}" class="card-img-top" alt="" width="100" height="120">
     <div class="card-body">
       <h5 id="title" class="card-title">${game.name} </h5>
-      <p class="card-text">Platform ${game.parent_platforms.map((platform)=>{
-        return platform.platform.name
-      })} </p>
+      <p class="card-text">Platform </p>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Rating ${game.rating}</li>
@@ -81,21 +72,19 @@ ${games.map(game =>
       <li class="list-group-item">Release Date ${game.released}</li>
     </ul>
     <div class="card-body">
-      <a id="fav" href="#" class="card-link">Favorites</a>
-      <a id=" wish" href="#" class="card-link">Wishlist</a>
-
-      <form method="GET" action="/oneresult/${game.slug}" class="d-flex">
-                  
-                  <button  class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Search</button>
-                </form>
+      <a id="fav" href="#" class="card-link">Add to Favorites</a>
+      <a id="wish" href="#" class="card-link">Add to Wishlist</a>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+    </div> 
     </div>
   </div>
-  `).join("")}
+  
   </div>
 
-      </div>
-    </div>
-    
+
+ 
     
 
 
