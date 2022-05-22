@@ -9,7 +9,8 @@ const { sequelize, Game, Favorites, Wishlist, User } = require('./models')
 const bodyParser = require('body-parser');
 const es6Renderer = require('express-es6-template-engine');
 const fetch = require("node-fetch");
-
+// const prohairesis =reqiure("prohairesis");
+// const dotenv = require("dotenv");
 
 //app.use('/', require('./routes/endpoints'));
 
@@ -18,6 +19,7 @@ const moment = require('moment');
 const pg = require('pg-promise')();
 
 const bcrypt = require('bcrypt');
+const { response } = require('express');
 
 //To convert the request to readable json format, we use bodyparser package
 app.use(bodyParser.json())
@@ -84,7 +86,7 @@ app.post('/home', async (req,res)=> {
    
     let games = await fetch(`https://rawg.io/api/games?key=c1be38abe1e74ea3a7b554f19b8a9df6&search=${urlEncodedSearchString}`)
     let gamesJson = await games.json()
-    let allGames = gamesJson.results.slice(0,3)
+    let allGames = gamesJson.results.slice(0,8)
       
         res.render('index3', {
         locals: {
@@ -94,6 +96,58 @@ app.post('/home', async (req,res)=> {
         });
         
 })    
+
+app.get('/home/2', async (req,res) => {
+    
+    let gameCard = {}
+    //fetch using search by name
+    fetch(`https://rawg.io/api/games?key=c1be38abe1e74ea3a7b554f19b8a9df6&search=batman`)
+    .then((response) =>{
+        return response.json()
+    })
+    .then(data => {
+        console.log(data)
+        
+        for (let index = 0; index < data.results.length; index++) {
+        
+        gameCard = {
+           name: data.results[index].name,
+           id: data.results[index].id,
+            rating:data.results[index].rating,
+            released: data.results[index].released,
+            img: data.results[index].background_image
+        }
+        console.log(gameCard)
+        
+        }
+        res.send(gameCard)
+    })
+    
+    
+
+})
+
+app.get('/oneresult/:gameslug' , async (req, res) => {
+    console.log(req.params.gameslug, "IM HERE")
+    let games = await fetch(`https://rawg.io/api/games/${req.params.gameslug}?key=c1be38abe1e74ea3a7b554f19b8a9df6`)
+    console.log(games)
+    let gamesJson = await games.json()
+    console.log(gamesJson)
+    let allGames = gamesJson
+      console.log(allGames)
+        
+        res.render('FavoritesWish', {
+        locals: {
+               game: allGames,
+               name: ''
+            }
+        });   
+
+  } )
+    
+
+
+
 
 app.get('/gameList', async (req, res) => {
 
@@ -190,6 +244,7 @@ app.post('/favInfo', async (req, res) => {
 
 
 
+
 //Get all Wishlist from Info (app.get)
 app.get('/wishInfo', async (req, res) => {
     let wishlistgame = await Wishlist.findAll();
@@ -224,6 +279,8 @@ app.get('/wishList/:id', async (req, res) => {
 // Add a game to the WishList
 app.post('/wishInfo', async (req, res) => {
     let createdwishList = await Wishlist.create(
+    
+    
     { 
         gamename: req.body.gamename,
         gameid: req.body.gameid,
@@ -234,6 +291,7 @@ app.post('/wishInfo', async (req, res) => {
     res.statusCode = 200;
     res.send(createdwishList);
 });
+
 
 
 
@@ -284,6 +342,22 @@ app.post('/favInfo', async (req, res) => {
     res.send(createdUser);
 });
 
+// app.post('/pushFav', async (req,res)=>{
+
+
+//     gameCard = {
+//         name: data.results[index].name,
+//         id: data.results[index].id,
+//          rating:data.results[index].rating,
+//          released: data.results[index].released,
+//          img: data.results[index].background_image
+//      }
+//      console.log(gameCard)
+     
+//      }
+//      res.send(gameCard)
+    
+// });
 
 //Update the meta for a game
  app.patch('/gameInfo/:gamename', async (req, res) =>{
