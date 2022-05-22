@@ -67,7 +67,7 @@ app.get('/gameList/:id', async (req, res) => {
     } else {
         res.statusCode = 200;
         // res.send(gaming);
-        res.render('gaming', {
+        res.send('gaming', {
             locals: {
                 gaming,
                 
