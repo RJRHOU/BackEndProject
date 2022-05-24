@@ -71,7 +71,7 @@ ${games.map(game =>
     <img src="${game.background_image}" class="card-img-top" alt="" width="100" height="120">
     <div class="card-body">
       <h5 id="title" class="card-title">${game.name} </h5>
-      <p class="card-text">Platform ${game.parent_platforms.map((platform)=>{
+      <p class="card-text">Platform ${game.parent_platforms.map((platform) => {
         return platform.platform.name
       })} </p>
     </div>
@@ -84,10 +84,11 @@ ${games.map(game =>
       <a id="fav" href="#" class="card-link">Favorites</a>
       <a id=" wish" href="#" class="card-link">Wishlist</a>
 
-      <form method="GET" action="/oneresult/${game.slug}" class="d-flex">
-                  
-                  <button  class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Search</button>
-                </form>
+      <!-- Used to get Game Info By hitting the /addToFavoritesInfo :gameslug API in ServerBP.js -->
+      <form method="POST" action="/addToFavorites/${game.name}/${game.slug}" class="d-flex">
+        <button class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Add to Favorites</button>
+      </form>
+
     </div>
   </div>
   `).join("")}

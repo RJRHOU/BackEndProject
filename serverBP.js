@@ -4,7 +4,7 @@
 
 const express = require('express');
 const app = express();
-const { sequelize, Game, Favorites, Wishlist, User } = require('./models')
+const { sequelize, Game, Favorites, Wishlist, favoritesTWO,  User } = require('./models')
 
 const bodyParser = require('body-parser');
 const es6Renderer = require('express-es6-template-engine');
@@ -20,6 +20,8 @@ const pg = require('pg-promise')();
 
 const bcrypt = require('bcrypt');
 const { response } = require('express');
+const favoritestwo = require('./models/favoritestwo');
+const { JSON } = require('sequelize');
 
 //To convert the request to readable json format, we use bodyparser package
 app.use(bodyParser.json())
@@ -97,35 +99,32 @@ app.post('/home', async (req,res)=> {
         
 })    
 
-app.get('/home/2', async (req,res) => {
+// app.get('/home/2', async (req,res) => {
     
-    let gameCard = {}
-    //fetch using search by name
-    fetch(`https://rawg.io/api/games?key=c1be38abe1e74ea3a7b554f19b8a9df6&search=batman`)
-    .then((response) =>{
-        return response.json()
-    })
-    .then(data => {
-        console.log(data)
+//     let gameCard = {}
+//     //fetch using search by name
+//     fetch(`https://rawg.io/api/games?key=c1be38abe1e74ea3a7b554f19b8a9df6&search=batman`)
+//     .then((response) =>{
+//         return response.json()
+//     })
+//     .then(data => {
+//         console.log(data)
         
-        for (let index = 0; index < data.results.length; index++) {
+//         for (let index = 0; index < data.results.length; index++) {
         
-        gameCard = {
-           name: data.results[index].name,
-           id: data.results[index].id,
-            rating:data.results[index].rating,
-            released: data.results[index].released,
-            img: data.results[index].background_image
-        }
-        console.log(gameCard)
+//         gameCard = {
+//            name: data.results[index].name,
+//            id: data.results[index].id,
+//             rating:data.results[index].rating,
+//             released: data.results[index].released,
+//             img: data.results[index].background_image
+//         }
+//         console.log(gameCard)
         
-        }
-        res.send(gameCard)
-    })
-    
-    
-
-})
+//         }
+//         res.send(gameCard)
+//     }) 
+// })
 
 app.get('/oneresult/:gameslug' , async (req, res) => {
     console.log(req.params.gameslug, "IM HERE")
@@ -142,17 +141,41 @@ app.get('/oneresult/:gameslug' , async (req, res) => {
                name: ''
             }
         });   
-
   } )
-    
+ 
+  // Adds to FavoritiesTWP DB
+app.post('/addToFavorites/:name/:slug' ,async (req, res) => {
+    console.log('favorite created', req.params)
+    await favoritesTWO.create(
+        { 
+            name: req.params.name,
+            slug: req.params.slug
+        } 
+        )   
+});
+
+
+app.get('/addToFavoritesInfo', async (req, res) => {
+
+    let allFavoriteSlugs = await favoritesTWO.findAll();
+    let favoriteGames = await Promise.all(allFavoriteSlugs.map(async (slugId) => fetch(`https://rawg.io/api/games/${slugId.slug}?key=c1be38abe1e74ea3a7b554f19b8a9df6`)));
+
+    console.log(favoriteGames)
+
+    //res.sendStatus(200);
+    res.render('FavoritesWish', {
+        locals: {
+               game: favoriteGames,
+            }
+    });   
+});
+
+
 
 
 
 
 app.get('/gameList', async (req, res) => {
-
-    
-  
     let gaming = await Game.findOne ({
         where: {
            
@@ -177,9 +200,6 @@ app.get('/gameList', async (req, res) => {
 // Add a game to the gameList
 app.post('/gameInfo', async (req, res) => {
 
-    
-
-
     let createdUser = await Game.create(
     { 
         gamename: req.body.gamename,
@@ -197,12 +217,12 @@ app.post('/gameInfo', async (req, res) => {
 
 
 //Get all Favorites from Info (app.get)
-// app.get('/favInfo', async (req, res) => {
-//     let favoritesgame = await Favorites.findAll();
+ app.get('/favInfo', async (req, res) => {
+     let favoritesgame = await Favorites.findAll();
 
-//     res.send(favoritesgame)
+    res.send(favoritesgame)
     
-// })
+ })
 
 // Get a single game from the favList (app.get)
 app.get('/favList/:id', async (req, res) => {
@@ -229,6 +249,7 @@ app.get('/favList/:id', async (req, res) => {
 
 // Add a game to the FavoritesList
 app.post('/favInfo', async (req, res) => {
+    console.log('FAVE_INFO GOT HIT', JSON.stringify(req, null, 2));
     let createdFavorites = await Favorites.create(
     { 
         gamename: req.body.gamename,
