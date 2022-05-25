@@ -4,7 +4,7 @@
 
 const express = require('express');
 const app = express();
-const { sequelize, Game, Favorites, Wishlist, favoritesTWO,  User } = require('./models')
+const { sequelize, Game, Favorites, Wishlist, favoritesTWO, favoritesLIST, User } = require('./models')
 
 const bodyParser = require('body-parser');
 const es6Renderer = require('express-es6-template-engine');
@@ -144,12 +144,17 @@ app.get('/oneresult/:gameslug' , async (req, res) => {
   } )
  
   // Adds to FavoritiesTWP DB
-app.post('/addToFavorites/:name/:slug' ,async (req, res) => {
+app.post('/addToFavorites/:name/:slug/:background_image/:rating/:released/' ,async (req, res) => {
     console.log('favorite created', req.params)
-    await favoritesTWO.create(
+    await favoritesLIST.create(
         { 
             name: req.params.name,
-            slug: req.params.slug
+            slug: req.params.slug,
+            background_image: req.params.background_image,
+            rating: req.params.rating,
+            released: req.params.released,
+       
+        
         } 
         )   
 });
@@ -158,14 +163,23 @@ app.post('/addToFavorites/:name/:slug' ,async (req, res) => {
 app.get('/addToFavoritesInfo', async (req, res) => {
 
     let allFavoriteSlugs = await favoritesTWO.findAll();
-    let favoriteGames = await Promise.all(allFavoriteSlugs.map(async (slugId) => fetch(`https://rawg.io/api/games/${slugId.slug}?key=c1be38abe1e74ea3a7b554f19b8a9df6`)));
+    let favoriteGames = await Promise.all(allFavoriteSlugs.map(async (slugId) => { 
+       let favoriteGameInfo = fetch(`https://rawg.io/api/games/${slugId.slug}?key=c1be38abe1e74ea3a7b554f19b8a9df6`)
+       let gamesJson = await games.json()
 
-    console.log(favoriteGames)
+       res.render('FavoritesWish', {
+        locals: {
+               game: favoriteGames,
+            }
+    });   
+    }
+       
+       ));
 
     //res.sendStatus(200);
     res.render('FavoritesWish', {
         locals: {
-               game: favoriteGames,
+               games: favoriteGames,
             }
     });   
 });

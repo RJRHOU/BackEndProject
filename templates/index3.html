@@ -25,7 +25,10 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./FavoritesWish.html">Favorites</a>
+                    <form method="GET" action="/addToFavoritesInfo" class="d-flex">
+                      <input name="search" class="form-control me-2 search-button" type="text" placeholder="Search" aria-label="Search">
+                      <button  class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Favorites</button>
+                    </form>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="">Page 2</a>
@@ -67,6 +70,7 @@
       
 
 ${games.map(game => 
+ 
   `<div class="card" style="width: 18rem;">
     <img src="${game.background_image}" class="card-img-top" alt="" width="100" height="120">
     <div class="card-body">
@@ -85,7 +89,7 @@ ${games.map(game =>
       <a id=" wish" href="#" class="card-link">Wishlist</a>
 
       <!-- Used to get Game Info By hitting the /addToFavoritesInfo :gameslug API in ServerBP.js -->
-      <form method="POST" action="/addToFavorites/${game.name}/${game.slug}" class="d-flex">
+      <form method="POST" action="/addToFavorites/${game.name}/${game.slug}/${game.background_image}/${game.rating}/${game.released}/" class="d-flex">
         <button class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Add to Favorites</button>
       </form>
 
