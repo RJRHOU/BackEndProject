@@ -8,7 +8,7 @@
 
 </head>
 
-   <body onload="updateDB();">                 
+   <body>                 
   
         <div class="flexbox">
     
@@ -65,29 +65,20 @@
               <!-- <% results.forEach(games => { %>       -->
       
 
-${allFavoriteSlugs.map(game => 
+${games.map(game => 
   `<div class="card" style="width: 18rem;">
-    <img src="${game.background_image}" class="card-img-top" alt="" width="100" height="120">
     <div class="card-body">
       <h5 id="title" class="card-title">${game.dataValues.name} </h5>
-      <!-- <p class="card-text">Platform ${game.parent_platforms.map((platform) => {
-        return platform.platform.name
-      })} </p> -->
     </div>
+    <img src="${game.background_image}" class="card-img-top" alt="" width="100" height="120">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Rating ${game.rating}</li>
+      <li class="list-group-item">Rating ${game.dataValues.rating}</li>
      
-      <li class="list-group-item">Release Date ${game.released}</li>
+      <li class="list-group-item">Release Date ${game.dataValues.released}</li>
     </ul>
-    <div class="card-body">
-      <li class="list-group-item">Release Date ${game.description}</li>
-
-      <!-- Used to get Game Info By hitting the /addToFavoritesInfo :gameslug API in ServerBP.js
-      <form method="POST" action="/addToFavorites/${game.name}/${game.slug}" class="d-flex">
-        <button class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Add to Favorites</button>
-      </form> -->
-
-    </div>
+    <form method="POST" action="/deleteGame/${game.slug}?_method=DELETE" class="d-flex">
+      <button class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Delete Favorite</button>
+    </form>
   </div>
   `).join("")}
   </div>
@@ -103,11 +94,6 @@ ${allFavoriteSlugs.map(game =>
     <script src="serverBP.js"></script>    
 
     <script language="javascript">
-      function updateDB() {
-    
-        let gamesPromise = await fetch(`/addToFavoritesInfo`)
-        let games = await gamesPromise.json()
-      }
   </script>
 </body>
 </html>

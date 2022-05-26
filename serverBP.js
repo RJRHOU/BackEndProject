@@ -3,8 +3,9 @@
 // document.getElementById('search').addEventListener('click', singleGame)
 
 const express = require('express');
+const methodOverride = require('method-override');
 const app = express();
-const { sequelize, Game, Favorites, Wishlist, favoritesTWO, favoritesLIST, User } = require('./models')
+const { sequelize, Game, Favorites, Wishlist, favoritesTWO, favoritesLIST, favoriteGames, User } = require('./models')
 
 const bodyParser = require('body-parser');
 const es6Renderer = require('express-es6-template-engine');
@@ -24,6 +25,7 @@ const favoritestwo = require('./models/favoritestwo');
 const { JSON } = require('sequelize');
 
 //To convert the request to readable json format, we use bodyparser package
+app.use(methodOverride('_method'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}))
 
@@ -89,11 +91,14 @@ app.post('/home', async (req,res)=> {
     let games = await fetch(`https://rawg.io/api/games?key=c1be38abe1e74ea3a7b554f19b8a9df6&search=${urlEncodedSearchString}`)
     let gamesJson = await games.json()
     let allGames = gamesJson.results.slice(0,8)
-      
+        let imgArray = []
+        allGames.map((game) => {
+            imgArray.push(encodeURIComponent(game.background_image))
+        })
         res.render('index3', {
         locals: {
                games: allGames,
-               name: ''
+               image: imgArray
             }
         });
         
@@ -143,45 +148,47 @@ app.get('/oneresult/:gameslug' , async (req, res) => {
         });   
   } )
  
-  // Adds to FavoritiesTWP DB
-app.post('/addToFavorites/:name/:slug/:background_image/:rating/:released/' ,async (req, res) => {
+  // Adds to FavoritiesLIST DB
+app.post('/addToFavorites/:name/:slug/:rating/:released/:image' ,async (req, res) => {
     console.log('favorite created', req.params)
     await favoritesLIST.create(
         { 
             name: req.params.name,
             slug: req.params.slug,
-            background_image: req.params.background_image,
-            rating: req.params.rating,
+            background_image: req.params.image,
             released: req.params.released,
        
         
-        } 
-        )   
+        })  
+    res.sendStatus(200).send("created"); 
 });
+
+// Delete a game from the Favorites
+app.delete('/deleteGame/:slug', async (req, res) => {
+    console.log(req.params.slug, favoritesLIST.slug);
+    let deletedGames = await favoritesLIST.destroy({
+       
+        where: {
+            slug: req.params.slug
+        }
+    })
+    res.sendStatus(200).send(deletedGames);
+})
 
 
 app.get('/addToFavoritesInfo', async (req, res) => {
+    let allFavoriteSlugs = await favoritesLIST.findAll();
+    console.log(allFavoriteSlugs)
+    if(allFavoriteSlugs === null) {
+        res.send('tf')
+    } else {
 
-    let allFavoriteSlugs = await favoritesTWO.findAll();
-    let favoriteGames = await Promise.all(allFavoriteSlugs.map(async (slugId) => { 
-       let favoriteGameInfo = fetch(`https://rawg.io/api/games/${slugId.slug}?key=c1be38abe1e74ea3a7b554f19b8a9df6`)
-       let gamesJson = await games.json()
-
-       res.render('FavoritesWish', {
-        locals: {
-               game: favoriteGames,
-            }
-    });   
+        res.render('FavoritesWish', {
+            locals: {
+                   games: allFavoriteSlugs,
+                }
+        });  
     }
-       
-       ));
-
-    //res.sendStatus(200);
-    res.render('FavoritesWish', {
-        locals: {
-               games: favoriteGames,
-            }
-    });   
 });
 
 
