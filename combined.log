@@ -1873,3 +1873,12 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/serverBP.js","Time":"05/26/2022, 9:01:31 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/serverBP.js","Time":"05/26/2022, 9:01:31 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"POST","Body":{},"Content_Type":"application/x-www-form-urlencoded","Path":"/addToFavoritesInfo","Time":"05/26/2022, 9:01:32 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/login","Time":"05/26/2022, 9:23:03 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/BackEndProject/global.css","Time":"05/26/2022, 9:23:03 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/%E2%80%9C./login.js%E2%80%9D","Time":"05/26/2022, 9:23:03 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/signUp","Time":"05/26/2022, 9:24:16 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/BackEndProject/global.css","Time":"05/26/2022, 9:24:16 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/BackEndProject/signUp.js","Time":"05/26/2022, 9:24:16 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/signUp","Time":"05/26/2022, 9:25:38 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/BackEndProject/global.css","Time":"05/26/2022, 9:25:38 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/BackEndProject/signUp.js","Time":"05/26/2022, 9:25:38 pm"},"service":"Game"}
