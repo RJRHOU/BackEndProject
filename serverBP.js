@@ -4,7 +4,7 @@
 
 const express = require('express');
 const app = express();
-const { sequelize, Game, Favorites, Wishlist, favoritesTWO,  User } = require('./models')
+const { sequelize, Game, Favorites, Wishlist, favoritesTWO,  Users } = require('./models')
 
 const bodyParser = require('body-parser');
 const es6Renderer = require('express-es6-template-engine');
@@ -441,30 +441,74 @@ app.post('/favInfo', async (req, res) => {
  })
 
  // User login 
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-
-    models.User.findOne({
-        where: { email: email }
-      }).then((user) => {
-        if (!user) {
-          res.json({ error: 'no user with that username' })
-          return;
+app.post('/login', async (req, res) => {
+    let user = await Users.findOne({
+        where: {
+            email: req.body.email
         }
-    
-        bcrypt.compare(password, user.password, (err, match) => {
-          if (match) {
-            req.session.user = user;
-            res.json({ user_id: user.id, success: true })
-          } else {
-            res.json({ error: 'incorrect password' })
-          }
-        })
-      })
     })
+    if(user !== null){
+        let passwordCheck = await bcrypt.compare(req.body.password, user.password)
+        if(passwordCheck === true){
+            console.log("hi")
+            res.render('index2', {
+                locals: {
+                    //    name: '',
+                    //    games: []
+                    }
+                });
+        }
+    }
+    })
+
+app.post('/signUp', async function (req, res) {
+    console.log(req.body.firstName, req.body.lastName, req.body.email, req.body.username, "USERNAME")
+    let allUsers = await Users.findAll()
+    console.log(allUsers)
+    createdUser = await Users.create(
+        {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,                
+            email: req.body.email,
+            password: await bcrypt.hash(req.body.password, 12),
+            username: req.body.username
+         })
+
+    // let newUserInfo = await Users.findOne ({
+    //     where: {
+    //             username: Users.username
+    //         }
+    //     })
+    //     if (newUserInfo == null) {
+    //         res.statusCode = 400;
+    //         res.send('Unsuccessful');
+    //     } else {
+    //         res.send('Successful')
+    //     }
+    res.send("User added")
+});
+
+app.get('/login', (req, res) => {
+   
+    res.render('login', {
+        locals: {
+            //    name: '',
+            //    games: []
+            }
+        });
+    })
+    app.get('/signUp', (req, res) => {
+   
+        res.render('signUp', {
+            locals: {
+                //    name: '',
+                //    games: []
+                }
+            });
+        })
 
 
 app.listen(8500, async ()=> {
-    console.log('Server is running on port 7500')
+    console.log('Server is running on port 8500')
     await sequelize.sync()
 })
