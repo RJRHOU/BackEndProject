@@ -1232,7 +1232,7 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/serverBP.js","Time":"05/24/2022, 4:33:02 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/serverBP.js","Time":"05/24/2022, 4:33:02 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"POST","Body":{},"Content_Type":"application/x-www-form-urlencoded","Path":"/addToFavorites/Pok%C3%A9mon%20FireRed,%20LeafGreen/pokemon-firered","Time":"05/24/2022, 4:33:09 pm"},"service":"Game"}
-<<<<<<< HEAD
+<
 {"level":"info","message":{"Action":"POST","Body":{},"Path":"/signUp","Time":"05/25/2022, 1:56:20 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"POST","Body":{},"Path":"/login","Time":"05/25/2022, 5:10:30 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"POST","Body":{},"Path":"/login","Time":"05/25/2022, 5:32:49 pm"},"service":"Game"}
@@ -1821,4 +1821,3 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/Assets/WDNew.jpg","Time":"05/26/2022, 5:56:48 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/addToFavoritesInfo","Time":"05/26/2022, 5:56:49 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/serverBP.js","Time":"05/26/2022, 5:56:50 pm"},"service":"Game"}
->>>>>>> master

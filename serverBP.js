@@ -160,7 +160,7 @@ app.post('/addToFavorites/:name/:slug/:rating/:released/:image' ,async (req, res
        
         
         })  
-    res.sendStatus(200).send("created"); 
+    
 });
 
 // Delete a game from the Favorites
@@ -172,7 +172,7 @@ app.delete('/deleteGame/:slug', async (req, res) => {
             slug: req.params.slug
         }
     })
-    res.sendStatus(200).send(deletedGames);
+    res.redirect('back');
 })
 
 
