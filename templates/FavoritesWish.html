@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Response Page</title>
-  
 
 </head>
-<body>
-    <body>
+
+   <body>                 
+  
         <div class="flexbox">
     
             <header class="header">
@@ -48,7 +48,7 @@
                     <a class="nav-link disabled">Disabled</a>
                   </li>
                 </ul>
-                <form method="POST" action="/home" class="d-flex">
+                <form method="POST" action="/addToFavoritesInfo" class="d-flex">
                   <input name="search" class="form-control me-2 search-button" type="text" placeholder="Search" aria-label="Search">
                   <button  class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Search</button>
                 </form>
@@ -57,34 +57,34 @@
           </nav>   
     </header>
     
-
     <div>
 
-  <div class="card" style="width: 18rem;">
+      <!-- <%- include('partials/nav') %> -->
+      <div class="container d-flex result-container">
+          <div class="row d-flex result-cards">
+              <!-- <% results.forEach(games => { %>       -->
+      
+
+${games.map(game => 
+  `<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 id="title" class="card-title">${game.dataValues.name} </h5>
+    </div>
     <img src="${game.background_image}" class="card-img-top" alt="" width="100" height="120">
-    <div class="card-body">
-      <h5 id="title" class="card-title">${game.name} </h5>
-      <p class="card-text">Platform </p>
-    </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Rating ${game.rating}</li>
-      <li class="list-group-item">Game ID ${game.id}</li>
-      <li class="list-group-item">Release Date ${game.released}</li>
+      <li class="list-group-item">Rating ${game.dataValues.rating}</li>
+     
+      <li class="list-group-item">Release Date ${game.dataValues.released}</li>
     </ul>
-    <div class="card-body">
-      <a id="fav" href="#" class="card-link">Add to Favorites</a>
-      <a id="wish" href="#" class="card-link">Add to Wishlist</a>
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-    </div> 
+    <form method="POST" action="/deleteGame/${game.slug}?_method=DELETE" class="d-flex">
+      <button class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Delete Favorite</button>
+    </form>
+  </div>
+  `).join("")}
+  </div>
+
+      </div>
     </div>
-  </div>
-  
-  </div>
-
-
- 
     
 
 
@@ -92,5 +92,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
     <script src="serverBP.js"></script>    
+
+    <script language="javascript">
+  </script>
 </body>
 </html>
