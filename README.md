@@ -1,6 +1,6 @@
 # PlayHub
 
-An application used to write reviews and save the titles of your favorite video games. Displaying information on the browser using HTML, JavaScript, and CSS, EJS. Storing data in a database using sequelize.
+An application used to write reviews and save the titles of your favorite video games. Displaying information on the browser using HTML, JavaScript, and CSS. Storing data in a database using sequelize.
 
 ## Developers
 

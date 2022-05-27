@@ -17,45 +17,33 @@
                
      
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="./index2.html">Gamz+</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./FavoritesWish.html">Favorites</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="">Page 2</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="">Page 3</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <!-- <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" >Gamz+</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <form method="GET" action="/addToFavoritesInfo" class="d-flex">
+                          <button  class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Favorites</button>
+                        </form>
+                      </li>
+                      <li class="nav-item">
+                        <form method="GET" action="/addToFavoritesInfo" class="d-flex">
+                          <button  class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Edit Favorites</button>
+                        </form>
+                      </li>
+                     
                     </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                  </li>
-                </ul>
-                <form method="POST" action="/addToFavoritesInfo" class="d-flex">
-                  <input name="search" class="form-control me-2 search-button" type="text" placeholder="Search" aria-label="Search">
-                  <button  class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Search</button>
-                </form>
-              </div>
-            </div>
-          </nav>   
+                    <form method="POST" action="/home" class="d-flex">
+                      <input name="search" class="form-control me-2 search-button" type="text" placeholder="Search" aria-label="Search">
+                      <button  class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>   
     </header>
     
     <div>
@@ -74,13 +62,11 @@ ${games.map(game =>
     <img src="${game.background_image}" class="card-img-top" alt="" width="100" height="120">
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Rating ${game.dataValues.rating}</li>
-     
       <li class="list-group-item">Release Date ${game.dataValues.released}</li>
     </ul>
     <form method="POST" action="/deleteGame/${game.slug}?_method=DELETE" class="d-flex">
       <button class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Delete Favorite</button>
-      
-    </form>
+     </form>
     <form method="POST" action="/deleteGame/${game.slug}?_method=DELETE" class="d-flex">
       <button class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Add A Rank to your Liking</button>
     </form>
@@ -100,5 +86,10 @@ ${games.map(game =>
 
     <script language="javascript">
   </script>
+  <script>
+    function myFunction() {
+      alert("Card was Deleted from your Favorite List!");
+    }
+    </script>
 </body>
 </html>
