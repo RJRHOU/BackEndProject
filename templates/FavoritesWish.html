@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Response Page</title>
+    <link rel="stylesheet" href="game.css">
 
 </head>
 
@@ -61,16 +62,18 @@ ${games.map(game =>
     <img src="${game.background_image}" class="card-img-top" alt="" width="100" height="120">
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Rating ${game.dataValues.rating}</li>
-     
       <li class="list-group-item">Release Date ${game.dataValues.released}</li>
     </ul>
     <form method="POST" action="/deleteGame/${game.slug}?_method=DELETE" class="d-flex">
-      <button  onclick="myFunction()" class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Delete Favorite</button>
+      <button class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Delete Favorite</button>
+     </form>
+    <form method="POST" action="/deleteGame/${game.slug}?_method=DELETE" class="d-flex">
+      <button class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Add A Rank to your Liking</button>
     </form>
   </div>
   `).join("")}
   </div>
-
+  
       </div>
     </div>
     

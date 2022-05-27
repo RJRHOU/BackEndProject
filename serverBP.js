@@ -160,10 +160,10 @@ app.post('/addToFavorites/:name/:slug/:rating/:released/:image' ,async (req, res
        
         
         })  
-    
+
 });
 
-// Delete a game from the Favorites
+// Delete a game from the FavoritesLIST
 app.delete('/deleteGame/:slug', async (req, res) => {
     console.log(req.params.slug, favoritesLIST.slug);
     let deletedGames = await favoritesLIST.destroy({
@@ -175,7 +175,23 @@ app.delete('/deleteGame/:slug', async (req, res) => {
     res.redirect('back');
 })
 
+//Edit a game from the favoritesLIST
+app.patch('/editGame/:slug', async (req, res) =>{
+    let editedGame = await favoritesLIST.update(
+        {
+            star: req.body.star,
+        
+         },    {
+                  where:{
+                      star: req.params.star
+                  }
+                } 
+        
+    )
+    res.sendStatus(200).send(editedGame);          
+ })
 
+ // 
 app.get('/addToFavoritesInfo', async (req, res) => {
     let allFavoriteSlugs = await favoritesLIST.findAll();
     console.log(allFavoriteSlugs)
