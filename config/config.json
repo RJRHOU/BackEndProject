@@ -1,8 +1,8 @@
 {
   "development": {
 
-    "username": "zaidsyed",
-    "password": "null",
+    "username": "postgres",
+    "password": "postgres",
 
     "database": "Game",
     "host": "127.0.0.1",
