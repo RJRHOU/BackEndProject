@@ -39,18 +39,27 @@
                     <span></span>
                     <label>Email</label>
                 </div>
+                
+<!-- Pop up funtion for signup -->
                 <div class="login">
-                    <button id="loginButton" type="submit">Sign Up</button>
+                    <button onclick="myFunction()" id="loginButton" type="submit" >Sign Up</button>
                 </div>
             </form>
             <div id="errors"></div>
         </div>
         <div>
-            <a href="login.html" id="login" color:>Login</a>
+
+<!-- return to login -->
+                <form method="GET" action="/login" class="d-flex">
+                  <button  class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Return to Login</button>
+                </form>      
         </div>
-    
         <script src="/BackEndProject/signUp.js"></script>
-    
+        <script>
+            function myFunction() {
+              alert("User Account added. Sign in on next page.");
+            }
+            </script>
     </body>
     
 </html>
