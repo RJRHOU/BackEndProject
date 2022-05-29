@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link href="/BackEndProject/global.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Paytone+One">
+    <script src="https://ajax.googlepis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"></script>
+</head>
+<body>
+    <div class="container-fluid bg">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+<!--form start-->
+                <form class="form-container" method="POST" action="/login">
+                <h1 class="h1">Gamz+</h1>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1" class="login">Email address</label>
+                      <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1" class="login">Password</label>
+                      <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <div class="pass">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Submit</button>
+                </form>
+                <form method="GET"   action="/forgotPass" class="d-flex" >
+                  <button id="button" class="btn btn-sm btn-block btn-primary mt-auto" type="submit">Forgot Password?</button>
+                  </form>
+<!--form end-->
+                <div class="signup_link">
+                  Not a member? <form method="GET" action="/signUp">
+                    <button type="submit">Sign Up Here!</button></form>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        </div>
+    </div>
+    <script src=“./login.js”></script>
+</body>
+</html>
