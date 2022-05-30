@@ -26,6 +26,9 @@ app.set('views', 'templates');
 app.set('view engine', 'html');
 app.use(express())
 
+// You need to explicitly tell express what folders to use in order for it to render correctly
+app.use(express.static('css'))
+
 // Winston to log crash errors
 const logger = winston.createLogger({
     level: 'info',
