@@ -2617,3 +2617,9 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/game.css","Time":"05/28/2022, 1:22:42 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/contactPAGETWO","Time":"05/28/2022, 1:22:49 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/BackEndProject/templates/contactPAGETWO.css","Time":"05/28/2022, 1:22:49 pm"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/","Time":"05/30/2022, 11:27:04 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/home","Time":"05/30/2022, 11:27:39 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/game.css","Time":"05/30/2022, 11:27:39 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/contactPAGETWO","Time":"05/30/2022, 11:27:50 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/contactPAGETWO.css","Time":"05/30/2022, 11:27:50 am"},"service":"Game"}
+{"level":"info","message":{"Action":"GET","Body":{},"Path":"/contactPAGETWO","Time":"05/30/2022, 11:34:48 am"},"service":"Game"}
