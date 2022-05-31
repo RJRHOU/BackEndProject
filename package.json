@@ -10,9 +10,7 @@
 
   "scripts": {
 
-    "start": "node serverBP.js",
-
-    "start:dev": "nodemon serverBP.js",
+    "start": "nodemon serverBP.js",
 
     "db:up": "npx sequelize-cli db:migrate",
 
@@ -58,8 +56,9 @@
 
     "sequelize": "^6.19.0",
 
-    "winston": "^3.7.2"
+    "winston": "^3.7.2",
 
+    "nodemon": "^2.0.16"
   },
 
   "devDependencies": {
