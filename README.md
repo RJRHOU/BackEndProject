@@ -10,6 +10,11 @@ Welcome to the one and only GAMZ+ where you have the control to look and view a 
          - "Add" their choice of game/games in a "Favorite List"
          - "Delete" a game/games from that list.
          - "Add a Rank" from best to least ranging from 1-5.  
+
+
+
+## Gamz+ HerokuApp Webpage:
+   - <a href="https://gamz2022.herokuapp.com/home">Link to our Live Website</a>
             
 
 ## NPM Packages Used:
