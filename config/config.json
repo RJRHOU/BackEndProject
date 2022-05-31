@@ -1,27 +1,35 @@
 {
   "development": {
-
-
-    "username": "zaidsyed",
-    "password": "",
-
-
-    "database": "Game",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
+    "username": "cditjrevklavew",
+    "password": "5bf223556a36851017421666edada0c4d31d8d957ce217039bf25baa8711045f",
+    "database": "d9j8ppgvia1500",
+    "host": "ec2-3-231-82-226.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+        }
+      }
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "cditjrevklavew",
+    "password": "5bf223556a36851017421666edada0c4d31d8d957ce217039bf25baa8711045f",
+    "database": "d9j8ppgvia1500",
+    "host": "ec2-3-231-82-226.compute-1.amazonaws.com",
+    "dialect": "postgres"
   },
   "production": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "cditjrevklavew",
+    "password": "5bf223556a36851017421666edada0c4d31d8d957ce217039bf25baa8711045f",
+    "database": "d9j8ppgvia1500",
+    "host": "ec2-3-231-82-226.compute-1.amazonaws.com",
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+        }
+      }
   }
 }
