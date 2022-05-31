@@ -1,6 +1,6 @@
 # Gamz+:
 
-Welcome to the one and only GAMZ+ where you have the control to look and view a plethora of different variety of GAMZ. We are using https://rawg.io/ Api to grab/view/stor data in our backend and made it user-friendly in the frontend for all users. 
+Welcome to the one and only GAMZ+ where you have the control to look and view a plethora of different variety of GAMZ. We are using https://rawg.io/ Api to grab/view/store data in our backend and made it user-friendly in the frontend for all users. 
 
 - How to use our App:
    - Users can type their choice of GAMZ in the “Top Right Search Box” to view variety of games.
@@ -31,33 +31,33 @@ Welcome to the one and only GAMZ+ where you have the control to look and view a 
 ## Project Screenshot(s):
 
 - HomePage:
-![alt text]()
+![](Assets/homepage.png)
 
 - LoginPage:
-![alt text]()
+![](Assets/login.png)
 
 - Search Results/ Add to Favorites Page:
-![alt text]()
+![](Assets/Search%20results.png)
 
 - Add a Rank and Delete Page:
-![alt text]()
+![](Assets/Rank%20added%20to%20Bataman%20card.png)
 
 - Contact Us Page:
-![alt text]()
+![](Assets/contact%20page.png)
 
 ## Developers:
 
  - Rocky Rosales
     - [LinkedIn](https://www.linkedin.com/in/rocky-rosales-25b4491b4/)
     - [Github](https://github.com/RJRHOU)
-    - ![alt text]()
+    - <img src="Assets/rockyprofilepic.png" width="200">
 
  - Zaid Syed
     -  [LinkedIn](https://www.linkedin.com/in/zaid-syed-5a29261b4/)
     -  [Github](https://github.com/ZaidSyed22)
-    -  ![alt text]()
+    -  <img src= "Assets/zaidprofile.png" width="200">
 
  - Onyinye Okwuosa
     -  [LinkedIn](https://www.linkedin.com/in/onyinye-okwuosa-csm-303a27a8/)
     - [Github](https://github.com/okwuosa34)
-    - ![alt text]()
+    - <img src="Assets/onyinyepic.png" width="200">
