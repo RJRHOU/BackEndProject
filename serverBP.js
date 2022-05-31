@@ -70,13 +70,6 @@ app.get('/home/login', (req, res) => {
 })
     
 
-//Get all games from gameInfo (app.get)
-app.get('/gameInfo', async (req, res) => {
-    let gaming = await Game.findAll();
-
-    res.send(gaming)
-})
-
 //Posting search results from button click
 app.post('/home', async (req,res)=> {
    
@@ -140,7 +133,7 @@ app.delete('/deleteGame/:slug', async (req, res) => {
     res.redirect('back');
 })
 
-//Edit a game from the favoritesLIST
+//Edit a game from the favoritesLIST.
 app.post('/editGame/:slug', async (req, res) =>{
     await favoritesLIST.update(
         {
