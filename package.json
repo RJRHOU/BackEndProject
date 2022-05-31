@@ -10,7 +10,7 @@
 
   "scripts": {
 
-    "start": "nodemon serverBP.js",
+    "start": "node serverBP.js",
 
     "db:up": "npx sequelize-cli db:migrate",
 
