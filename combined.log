@@ -2617,6 +2617,7 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/game.css","Time":"05/28/2022, 1:22:42 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/contactPAGETWO","Time":"05/28/2022, 1:22:49 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/BackEndProject/templates/contactPAGETWO.css","Time":"05/28/2022, 1:22:49 pm"},"service":"Game"}
+
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/home","Time":"05/28/2022, 2:47:13 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/game.css","Time":"05/28/2022, 2:47:13 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/contactPAGETWO","Time":"05/28/2022, 2:47:26 pm"},"service":"Game"}
@@ -2747,3 +2748,4 @@
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/%E2%80%9C./login.js%E2%80%9D","Time":"05/30/2022, 3:46:54 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"GET","Body":{},"Path":"/%E2%80%9C./login.js%E2%80%9D","Time":"05/30/2022, 3:46:54 pm"},"service":"Game"}
 {"level":"info","message":{"Action":"POST","Body":{"email":"rocky.j.rosales@gmail.com","password":"enrique26"},"Content_Type":"application/x-www-form-urlencoded","Path":"/login","Time":"05/30/2022, 3:47:12 pm"},"service":"Game"}
+
