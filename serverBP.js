@@ -179,7 +179,6 @@ app.post('/login', async (req, res) => {
     if(user !== null){
         let passwordCheck = await bcrypt.compare(req.body.password, user.password)
         if(passwordCheck === true){
-            console.log("hi")
             res.render('HomeAfterLogin', {
                 locals: {
                     }
