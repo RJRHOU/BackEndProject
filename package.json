@@ -54,8 +54,9 @@
 
     "sequelize": "^6.19.0",
 
-    "winston": "^3.7.2"
+    "winston": "^3.7.2",
 
+    "nodemon": "^2.0.16"
   },
 
   "devDependencies": {
