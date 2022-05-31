@@ -9,6 +9,8 @@ const bodyParser = require('body-parser');
 const es6Renderer = require('express-es6-template-engine');
 const fetch = require("node-fetch");
 
+const env = process.env.NODE_ENV || "production";
+
 const winston = require('winston');
 const moment = require('moment');
 const pg = require('pg-promise')();
@@ -18,6 +20,9 @@ const favoritestwo = require('./models/favoritestwo');
 const { JSON } = require('sequelize');
 
 //To convert the request to readable json format, we use bodyparser package
+app.listen(PORT, () => {
+    console.log(`Server listening on ${PORT}`);
+  });
 app.use(methodOverride('_method'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -238,7 +243,7 @@ app.get('/forgotPass', (req, res) => {
            });
        }) 
 // port where local host is running      
-app.listen(8500, async ()=> {
-    console.log('Server is running on port 8500')
-    await sequelize.sync()
-})
+// app.listen(8500, async ()=> {
+//     console.log('Server is running on port 8500')
+//     await sequelize.sync()
+// })
