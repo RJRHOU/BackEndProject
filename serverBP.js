@@ -8,6 +8,7 @@ const { sequelize, Game, favoritesTWO, favoritesLIST, favoriteGames, Users } = r
 const bodyParser = require('body-parser');
 const es6Renderer = require('express-es6-template-engine');
 const fetch = require("node-fetch");
+const PORT = process.env.PORT || 3001;
 
 const env = process.env.NODE_ENV || "production";
 
